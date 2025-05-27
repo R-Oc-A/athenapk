@@ -20,9 +20,9 @@ target_sources(athenaPK PRIVATE
     kh.cpp
     linear_wave.cpp
     linear_wave_mhd.cpp
-    lw_implode.cpp
     orszag_tang.cpp
     rand_blast.cpp
     sod.cpp
     turbulence.cpp
+    PlasmaColumn_fixedboundary.cpp
     )
