@@ -127,4 +127,13 @@ void UserWorkBeforeOutput(MeshBlock *pmb, ParameterInput *pin,
 void Cleanup();
 } // namespace turbulence
 
+namespace PlasmaColumn_fixedboundary {
+using namespace parthenon::driver::prelude;
+
+void ProblemGenerator(MeshBlock *pmb, parthenon::ParameterInput *pin);
+//void ProblemInitPackageData(ParameterInput *pin, parthenon::StateDescriptor *pkg);
+void CustomX3(std::shared_ptr<MeshBlockData<Real>> &mbd, bool coarse);
+
+} // namespace PlasmaColumn_fixedboundary 
+
 #endif // PGEN_PGEN_HPP_
