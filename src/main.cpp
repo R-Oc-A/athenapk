@@ -101,6 +101,11 @@ int main(int argc, char *argv[]) {
     Hydro::ProblemSourceFirstOrder = turbulence::Driving;
     pman.app_input->InitMeshBlockUserData = turbulence::SetPhases;
     pman.app_input->MeshBlockUserWorkBeforeOutput = turbulence::UserWorkBeforeOutput;
+  }else if (problem == "PlasmaColumn_fixedboundary") {
+    pman.app_input->ProblemGenerator = PlasmaColumn_fixedboundary::ProblemGenerator;
+    //Hydro::ProblemInitPackageData = PlasmaColumn_fixedboundary::ProblemInitPackageData;
+    pman.app_input->RegisterBoundaryCondition(parthenon::BoundaryFace::inner_x3,
+                                              "CustomX3", PlasmaColumn_fixedboundary::CustomX3);
   } else {
     // parthenon throw error message for the invalid problem
     std::stringstream msg;
@@ -130,3 +135,4 @@ int main(int argc, char *argv[]) {
 
   return (0);
 }
+
