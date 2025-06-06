@@ -24,4 +24,5 @@ target_sources(athenaPK PRIVATE
     rand_blast.cpp
     sod.cpp
     turbulence.cpp
+    PlasmaColumn_fixedboundary.cpp
     )
